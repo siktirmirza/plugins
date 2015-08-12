@@ -27,6 +27,6 @@ $(".autoScrollabe").click(function() {
 function navClicked(_whereTo){
     $('html, body').animate({
         
-        scrollTop: $(_whereTo).offset().top
+        scrollTop: $(_whereTo).offset().top-200
     }, 2000);
 }
