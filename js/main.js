@@ -16,3 +16,17 @@
  */
 
 
+$(".autoScrollabe").click(function() {
+    alert($(this).attr('whereTo'));
+    $('html, body').animate({
+        
+        scrollTop: $($(this).attr('whereTo')).offset().top
+    }, 2000);
+});
+
+function navClicked(_whereTo){
+    $('html, body').animate({
+        
+        scrollTop: $(_whereTo).offset().top
+    }, 2000);
+}

@@ -70,3 +70,18 @@ p.large {
     vertical-align: middle;
     float: none;
 }
+
+
+#top{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+    
+}
+
+.marginForNav{
+    padding-top: 220px;
+}
