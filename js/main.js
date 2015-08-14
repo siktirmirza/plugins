@@ -1,4 +1,4 @@
-/* 
+/*
  * Copyright (C) 2015 Hadi Mehrpouya <http://www.hadi.link>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,14 +19,14 @@
 $(".autoScrollabe").click(function() {
     alert($(this).attr('whereTo'));
     $('html, body').animate({
-        
+
         scrollTop: $($(this).attr('whereTo')).offset().top
     }, 2000);
 });
 
 function navClicked(_whereTo){
     $('html, body').animate({
-        
-        scrollTop: $(_whereTo).offset().top-200
+
+        scrollTop: $(_whereTo).offset().top-100
     }, 2000);
 }

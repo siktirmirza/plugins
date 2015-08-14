@@ -1,87 +1,137 @@
-/*
-Copyright (C) 2015 Hadi Mehrpouya <http://www.hadi.link>
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-/* 
-    Created on : 12-Aug-2015, 12:38:03
-    Author     : Hadi Mehrpouya 
-*/
-
-
 hr {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    border-style: solid none;
-    border-width: 1px 0;
-    margin: 18px 0;
-    color: #FF0000;
+  -moz-border-bottom-colors: none;
+  -moz-border-image: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-style: solid none;
+  border-width: 1px 0;
+  margin: 18px 0;
+  color: #FF0000;
+}
+.noPadding * {
+  padding: 25px 50px 75px 100px;
 }
 
-
-
-.noPadding *{
-    padding: 25px 50px 75px 100px;
+.marginTop30 {
+  margin-top: 30px;
 }
-
-.biggerP{
-    font-size: 1.5em;
-    padding-left: .4em;
-
+section {
+  padding-left: 50px;
+  padding-right: 50px;
 }
-
+.biggerP {
+  font-size: 1.5em;
+  padding-left: .4em;
+}
 .grayBack {
-    background-color: #eee;
+  background-color: #eee;
+}
+
+.orangeBack{
+  background-color: rgba(208, 69, 3, 53);
+}
+
+.darkGreyBack{
+  background-color: rgba(62, 62, 62, 50);
+}
+
+.charcoalBack{
+  background-color: rgba(58, 81, 92, 50);
 }
 
 
+.whiteText{
+  color: white;
+}
+
+.saadBanner {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
 #plant {
-    img{
-        padding-left: .5em;
-    }
+  img {
+    padding-left: .5em;
+  }
 }
-
 p.large {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
-
-
-.row.padded{
-    padding: 0em 2em 0em 2em;
-
+.row.padded {
+  padding: 0em 2em 0em 2em;
 }
-
 .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+#top {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
+}
+#top img {
+  width: auto;
+  max-height: 80px;
+  margin-left: 10px;
+  margin-right: auto;
+  padding: 10px;
+}
+#top .navbar {
+  margin-bottom: 0px !important;
+  border-radius: 0px !important;
+  background-image: none !important;
+  background-repeat: none !important;
+  box-shadow: none !important;
+}
+#top .navbar-default {
+    background-color: #f8f8f8;
+    border-color: none !important;
+}
+.portfolio {
+  max-height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#tweet {
+  overflow: hidden;
+}
+#tweet ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 99999px;
+  height: 100px;
+}
+#tweet ul li {
+  width: 300px;
+  min-height: 150px;
+  float: left;
+  border-right: 1px solid #eee;
+  padding: 0 10px 0 0;
+  margin: 0 10px 0 0;
 }
 
 
-#top{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    background-color: white;
-    
+
+.marginForNav {
+  padding-top: 130px;
+}
+.group1 {
+  background-color: rgba(138, 137, 137, 58);
+}
+.group2, .group3, .group4, .group8, .group11, .group13, .group14 {
+  padding-bottom: 30px;
+}
+.group10, .group11 {
+  background-color: rgb(130, 30, 50);
 }
 
-.marginForNav{
-    padding-top: 220px;
+.group2, .group4, .group5, .group10 {
+  padding-top: 50px;
 }
