@@ -26,6 +26,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   <script type="text/javascript" src="js/libs/twitter-bootstrap/js/bootstrap.js"></script>
   <script type="text/javascript" src="js/libs/scrollNav/jquery.scrollNav.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
+  <script type="text/javascript" src="js/libs/tweetie.js"></script>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $.support.cors = true;
+      jQuery('#tweet').twittie({
+        apiPath: 'http://anaismoisy.com/apps/saad/api/tweet.php',
+        dateFormat: '%d %b %Y',
+        template: '<strong class="date">{{date}}</strong> - {{screen_name}}:<br>{{tweet}} — <a href="{{url}}" target=_blank><span class="glyphicon glyphicon-retweet" aria-hidden="true"></a></span>',
+        count: 100
+      }, function() {
+        setInterval(function() {
+          var item = $('#tweet ul').find('li:first');
+
+          item.animate({
+            marginLeft: '-220px',
+            'opacity': '0'
+          }, 500, function() {
+            $(this).detach().appendTo('#tweet ul').removeAttr('style');
+          });
+        }, 5000);
+      });
+    });
+  </script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,37 +95,37 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   </div>
   <div id="topText" class="container group2">
     <section class="text-center lead ">
-      In everyday life, there is the tendency to concentrate on the advantage of the action that we take, and not the disadvantage. We buy a smart-phone to be able to communicate and/or work, take the plane to travel to discover new places and learn from
-        other cultures. We are almost never thinking about the negatives consequences of our consumer behaviours.
+      Everyday we get bombarded with data and information from all over the world. Often we feel helpless about our abilities to do things while being trapped in the dilemma of knowing the consequences of our consumptions and choices.
     </section>
     <section class="text-center lead">
-      With this project, we argue that for every action there are choices made (conscious or unconscious): we choose personal goods and sacrifice something on the way, or renounce to a certain comfort in order to feel good with our conscience. Most of
-        the time it is not easy and it is possible to feel stuck on the edge, on the border, between ethics and necessity or desire. It is this human condition of living in a state of denial or helplessness we wanted to explore: the complex relation between
-        life/goods and death/destruction
+      Playing on these feelings, SAAD, from Afrikaans meaning Seed, is visualising human deaths as a direct and indirect result of the mining industry and conflict minerals in the Democratic Republic of Congo (DRC), used to build smart-phones and computers.
+      The project is constructed on different layers which all recall the idea of being on the edge, the border between life and death, and emphasise the complexity of nothing being either totally positive or negative.
     </section>
   </div>
   <div id="sidebyside" class="container-fluid group3">
-    <img src="res/sidebyside.png" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 noPadding">
+    <img src="res/sidebyside.jpg" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 noPadding">
     <img src="res/saadBig.png" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 noPadding saadBanner">
   </div>
   <div class="container-fluid grayBack group4">
     <div class="container">
 
       <section class="text-center lead ">
-        SAAD is composed of two complementary installations: a seed dispenser and a plant, visualising deaths due to the mining industry in Democratic Republic of the Congo (DRC). It aims to push the reflexion of the responsibility Western consumer users
-          of smartphones and computers have towards these workers. It plays on the feeling of being helpless towards the different issues our societies are facing. The project is constructed on different layers which all recall the idea of being on the
-          edge, the border between life and death, and emphasise the complexity of nothing being either totally positive or negative. It aims to symbolise the complexity of today’s world and the difficulty to position the self and the ethic in it. We
-          choose to focus on the partial perspective we have of our electronic devices nowadays, as it is something most Europeans possessed and use everyday without questioning the impact it can have on other human beings and the natural environment.
+        SAAD is composed of two complementary installations: a seed dispenser and a plant, visualising deaths due to the mining industry in Democratic Republic of the Congo (DRC). It aims to push the reflexion of the responsibility Western consumer users of smartphones
+        and computers have towards these workers. It plays on the feeling of being helpless towards the different issues our societies are facing. The project is constructed on different layers which all recall the idea of being on the edge, the border
+        between life and death, and emphasise the complexity of nothing being either totally positive or negative. It aims to symbolise the complexity of today’s world and the difficulty to position the self and the ethic in it. We choose to focus on
+        the partial perspective we have of our electronic devices nowadays, as it is something most Europeans possessed and use everyday without questioning the impact it can have on other human beings and the natural environment.
       </section>
     </div>
   </div>
   <div id="plant" class="container-fluid group5">
     <div class="row padded">
       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-        <img src="res/plant.png" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 noPadding">
+        <img src="res/plant.jpg" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 noPadding">
       </div>
       <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 ">
-        <section><h2>THE PLANT</h2></section>
+        <section>
+          <h2>THE PLANT</h2>
+        </section>
         <section class="lead text-justify paddingLeft20">The installation is made of a plant enclosed in a plexiglass box, preventing anyone to be able to water it. A watering system is releasing a drop of water when statistically a miner dies either from an accident in a mine, a disease in consequence
           of the working condition, or civil war financed by conflict minerals.
         </section>
@@ -114,7 +138,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     </div>
     <!--<div class="container-fluid">-->
     <div class="row padded">
-      <section><h2>THE SEED DISPENSER</h2></section>
+      <section class="marginTop30">
+        <h2>THE SEED DISPENSER</h2>
+      </section>
       <section class="text-left lead"> On the same system and data as the PLANT, this installation is releasing a seeds. Visitors can take one (if there is any), put it in an envelope to bring it home. The envelope is stamped with brief explanations of the project, the link to access
         the website and informations on how to take care of the plant.
       </section>
@@ -136,12 +162,183 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         </section>
       </div>
       <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-        <img src="res/seedDispenser.png" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> </div>
+        <img src="res/seedDispenser.jpg" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> </div>
     </div>
-    <img id="baobab" src="res/baobab.png" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <img id="baobab" src="res/baobab.jpg" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
   </div>
   <div class="container-fluid group6">
     <img id="seedInstructions" src="res/seedInstructions.png" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  </div>
+  <div class="container-fluid orangeBack whiteText group4">
+    <div class="container">
+      <section>
+        <h3>BEFORE PLANTING THE SEED</h3>
+      </section>
+      <section class="lead">
+        <ul>
+          <li>soaking baobab seed in hot water for 24 hours</li>
+          <li>let them dry for another day or so before planting</li>
+        </ul>
+      </section>
+      <section class="text-center lead">
+        The germination rate for baobab seeds can be low, slow and sporadic so sow two to three times the amount of seed required to ensure you get enough stock. Be aware that it can take 3-4 months from your first Baobab seedling to germinate until your last
+        one pokes its head above the compost.
+      </section>
+      <section class="text-justify lead">
+        Planting seed approximately 1/2 in. deep in the compost and water well using warm water. The seeds can now be moved to a sunny position. Considering the baobabs natural environment, they will need as much light as possible, and may even benefit from supplemental
+        lighting. It is imperative that you use a very well-drained growing medium. In order to germinate the baobab seeds the soil temperature will need to be kept at between 15 and 19 degrees Celsius.
+      </section>
+      <section class="marginTop30">
+        <h3>BAOBAB SEEDLING</h3>
+      </section>
+      <section class="text-justify lead">
+        Only water again when the growing medium is barely moist to the touch. Even then, do not soak them. Half water them, keeping the seeds barely moist as baobab seedlings are very prone to root rot. Please note that once the seedlings show through the compost,
+        do not attempt to remove the shell covering.
+      </section>
+      <section class="text-justify lead">
+        Transplant the seedlings when they are large enough to handle into 3 inch pots, again using a very free draining compost. You can pot on as required into 5 inch and finally 8 inch pots.
+      </section>
+      <section class="text-center lead">
+        <b>Absolutely no water must be given to the tree during its dormant period in the winter months or it will rot and die.</b>
+      </section>
+      <section class="text-justify lead">
+        If it is warm enough for you to overwintering your Baobab outside then it will need to be under protection from the rain - just make sure that it is fully ventilated to prevent fungal rots. Make sure that winter temperatures do not drop below 10 degrees
+        Celsius. If this is likely then the Baobab will need to be brought in under temperature controlled protection such as the sunniest room in the house or a heated greenhouse.
+      </section>
+      <section class="text-center lead">
+        <small>Instructions found on http://gardenofeaden.blogspot.co.uk/2013/05/how-to-grow-baobab-tree-from-seed.html</small>
+      </section>
+    </div>
+  </div>
+  <div class="container-fluid group7">
+    <img id="mining" src="res/Conflict-Minerals.png" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  </div>
+  <div class="container-fluid group8">
+    <div class="marginTop30 container">
+      <section class="marginTop30 lead text-justify">
+        Although the condition of mine workers have improved in the past few years, and in particularly in South Africa where The South African mining industry has reported a significant drop in the number of fatalities and injuries, thanks to better-working
+        conditions (Brand SA, 2015). However, there is still major social problems associated with the activity, including high accident rates in the mines due to low safety, high rates of HIV infection, land conflicts caused by the presence of large
+        transient populations, crime, poor sanitation, and child labour, in order to extract minerals essential for the electronics industry (Boocock, 2002; Nutt, 2012; Poulsen, 2012; Smith & Carrington, 2015). Miners have also more health problems, which
+        decreased their life expectancy (increased frequency of cancer of the trachea, bronchus, lung, stomach, and liver, pulmonary tuberculosis, silicosis, pleural diseases, malaria, dengue fever; noise-induced, hearing loss; bacterial and viral diseases;
+        blood, skin, and musculoskeletal system diseases (Eisler, 2003)). The situation is particularly unacceptable in the DRC, where the extracted metals, called conflict minerals, are financing the armed conflicts in the area. The fourth main conflict
+        minerals are gold, cassiterite, coltan, and wolframite. The last three are sometimes referred to under the acronym 3T, a reference to the tin, tantalum, and tungsten metals derived from them (Heath, 2014). The working conditions are described
+        as slavery (Heath, 2014; Nutt, 2012; Poulsen, 2010). This testimony described the part of the life of the workers: “Sometimes people worked 24 hours out of 24, night and day, using head-mounted lamps — one team working days and one doing nights.
+        At the time there were no rules, and sometimes miners died of fatigue. There were also deaths because the pits were deep and there was flooding” (Heath, 2014). It is difficult to trace if electronic devices are conflict mineral-free or coming
+        from a mine where the working condition is acceptable, as the supply chain is opaque, travelling to Asia and elsewhere to be smelted into metals (Heath, 2014). Reporter Heath explains that “by shining a spotlight on electronics manufacturers’
+        supply chains, legislators are hoping to pressure companies to invest in removing conflict minerals from their products” (2014). It is moving in the right direction. Nevertheless, the problem is that there simply aren’t enough of these conflict-free
+        smelters to meet the needs of the world’s biggest computer makers, and there are still companies that currently have no idea whether their products are ‘conflict-free’ (Heath, 2014; Schiller, 2012; Schwartz, 2012). The report Taking Conflict Out
+        of Consumer Gadgets claims that “consumer activism will continue to serve as a motivator for corporate action that demonstrates the market potential for ethical products as well as an effective entry point for a national and international movement
+        dedicated to peace in Congo” (Lezhnev & Hellmuth, 2012). However, Heath argues that stopping sourcing minerals from the DRC and its neighbouring countries, expose another issue, as it would kill what could be a valuable part of these fragile countries’
+        economies (2014). What can be seen at first appearance as a solution, can bring to light other issues.
+      </section>
+      <section class="text-justify">
+        Sources Boocock, C. N. (2002). Environmental impacts of foreign direct investment in the mining sector in Sub-Saharan Africa. Foreign Direct Investment and the Environment, 19. Brand SA. (2015). Fatalities at South Africa’s mines drop. Retrieved 12/06/15,
+        from http://www.southafrica.info/news/business/mine-deaths-27115.htm#.VaOuJHiiKJT Eisler, R. (2003). Health risks of gold miners: a synoptic review. Environmental Geochemistry and Health, 25(3), 325-345. Heath, N. (2014). How conflict minerals
+        funded a war that killed millions, and why tech giants are finally cleaning up their act. Retrieved 01/06/15, from techrepublic.com/article/how-conflict-minerals-funded-a-war-that-killed-millions/ Lezhnev, S., & Hellmuth, A. (2012). Taking Conflict
+        Out of Consumer Gadgets. Report issued by The Enough Project, Washington, DC. http://www. enoughproject. org/files/CorporateRankings2012. pdf. Li & Fung Research Centre, 385-414. Nutt, S. (2012). Time to extract responsibility from Africa’s mining
+        industry. Retrieved 06/06/12, from http://www.theglobeandmail.com/globe-debate/time-to-extract-responsibility-from-africas-mining-industry/article4492385/ Poulsen, F. P. (2010). Blood in the Mobile. Poulsen, F. P. (2012). Children of the Congo
+        who risk their lives to supply our mobile phones. Retrieved 01/06/12, from http://www.theguardian.com/sustainable-business/blog/congo-child-labour-mobile-minerals Schiller, B. (2012). How To Stop Conflict Minerals From Killing Congo. Retrieved
+        20/06/15, from http://www.fastcoexist.com/1680266/how-to-stop-conflict-minerals-from-killing-congo Schwartz, A. (2012). How To Keep Conflict Minerals Out Of Your Daily Life (Sort Of). 20/06/15, from How To Keep Conflict Minerals Out Of Your Daily
+        Life (Sort Of) Smith, D., & Carrington, D. (2015). Dust, TB and HIV: the ugly face of mining in South Africa. Retrieved 01/06/15, from http://www.theguardian.com/environment/2015/may/26/dust-tb-hiv-ugly-face-mining-south-africa
+      </section>
+    </div>
+  </div>
+  <div class="container-fluid group9">
+    <img id="mining" src="res/richardmosse_img7.jpg" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  </div>
+  <div class="container-fluid group10">
+    <div class="container">
+      <section>
+        <img id="mining" src="res/statistics.png" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      </section>
+    </div>
+  </div>
+  <div class="container-fluid group11 whiteText">
+    <div class="container">
+      <section class="marginTop30 lead text-justify">
+        In order to calculate at which rate the water will be released, we had to define and select which data to use. There are not any statistics reflecting the average number of deaths due to mining industry. The issue in DRC is too complex and factor in many
+        variables. The death can be the result of the armed conflict, infectious diseases or for example, as mentioned above HIV. At first appearance, there is no link between HIV and mines. However, this industry in DRC (and other countries in Africa
+        such as South Africa) is often connected to commercial sex, resulting in many infections for the workers, such as HIV, spreading the infection even outside the working site (Bollinger & Stover). To start, we set against the death rate of UK with
+        the one in DRC, allowing us to have a point of comparison. Surprisingly, according to United Nations Population Division, World Population Prospects, United Nations Statistical Division, and Population and Vital Statistics Report, they have a
+        very similar death rates (Central Intelligence Agency, 2014; Index Mundi, 2014a, 2014b; M. J. Morgan, 2009). However, this similarity coincides with the UK having an ageing population with 17.5% over 65 years old while in DRC only 2.6% of the
+        population is over the age of 65. The ratio of children under 14 years old in the UK is 17.3% while in DRC 43.1% are under 14 years old (Central Intelligence Agency, 2014; Index Mundi, 2014a, 2014b). The above comparison between UK and DRC suggests
+        the relationship of the existing conflicts, infectious diseases and mining industries that are all feeding to one another as the cause of young population and low life expectancy inside DRC. According to Poulsen, director of “Blood in the mobile”
+        “these resources have ended up fuelling the bloodiest war since WWII” (Poulsen, 2010). It is estimated that 5 million people have died since 1998 and 300.000 women have been raped (Heath, 2014; Poulsen, 2010; enough, n.d.). It is in average 870
+        persons per day who died in the past 17 years: 36 per hour, in connection to the mining industry in the country. Our installation aims to show the continuity of this issue over the 10 days of the ECA Master degree show 2015. The exhibition is
+        open from 11am to 5pm, that is to say 6h per day equivalent to the death of 216 persons. The watering system will release 11 drops of water during a day at randomly generated intervals. Each drop will represent 20 individuals dying in the Democratic
+        Republic of Congo.
+      </section>
+      <section class="text-justify">
+        Sources Bollinger, L., & Stover, J. The Economic Impact of AIDS in Congo (DRC) September 1999. The Futures Group International. Central Intelligence Agency. (2014). The World Factbook. Retrieved 08/07/15, from https://www.cia.gov/library/publications/the-world-factbook/rankorder/2066rank.html
+        enough. (n.d.). Eastern Congo. Retrieved 08/07/15, from http://www.enoughproject.org/conflicts/eastern_congo Heath, N. (2014). How conflict minerals funded a war that killed millions, and why tech giants are finally cleaning up their act. Retrieved
+        01/06/15, from techrepublic.com/article/how-conflict-minerals-funded-a-war-that-killed-millions/ Index Mundi. (2014a). Congo, Democratic Republic of the Demographics Profile 2014. Retrieved 08/07/15, from http://www.indexmundi.com/democratic_republic_of_the_congo/demographics_profile.html
+        Index Mundi. (2014b). United Kingdom Demographics Profile 2014. Retrieved 08/07/15, from http://www.indexmundi.com/united_kingdom/demographics_profile.html Morgan, M. J. (2009). DR Congo’s $24 trillion fortune. Retrieved 08/07/15, from http://www.thefreelibrary.com/DR+Congo%27s+$24+trillion+fortune.-a0193800184
+        Poulsen, F. P. (2010). Blood in the Mobile.
+      </section>
+    </div>
+  </div>
+  <div class="container-fluid group12">
+    <div class="marginTop30 container">
+      <section>
+        <h3>SAAD TWITER FEED
+          <small>- share how your seed and thoughts evolved since you planted it</small>
+        </h3>
+      </section>
+      <div class="marginTop30 container">
+        <section>
+          <div id="tweet" class="tweet"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid group13">
+    <div class="marginTop30 container text-center">
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <section>
+          <h3>ANAIS MOISY</h3>
+        </section>
+        <section>
+          <img src="res/Anais.png" alt="Anais" class="img-responsive portfolio">
+        </section>
+        <section>
+          Designer
+          <br> MA student Design Informatics
+          <br>
+          <a href="http://www.anaismoisy.com">www.anaismoisy.com</a>
+          <br>
+          <a href="mailto:anais.moisy@gmail.com">anais.moisy@gmail.com</a>
+        </section>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <section>
+          <h3>HAHI MEHRPOUYA</h3>
+        </section>
+        <section>
+          <img src="res/Hadi.png" alt="Hadi" class="img-responsive portfolio">
+        </section>
+        <section>
+          Developer
+          <br> PHD student Design Informatics
+          <br>
+          <a href="http://www.hadi.link">www.hadi.link</a>
+          <br>
+          <a href="mailto:H.Mehrpouya@ed.ac.uk">H.Mehrpouya@ed.ac.uk</a>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid group14">
+    <div class="marginTop30 container text-center">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <a href="mailto:saad@gmail.com">saad@gmail.com</a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <a href="https://twitter.com/SaadProject">@SaadProject</a>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <a href="http://www.designinformatics.org">www.designinformatics.org</a>
+      </div>
+    </div>
   </div>
 </body>
 

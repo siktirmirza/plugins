@@ -27,6 +27,15 @@ section {
 .grayBack {
   background-color: #eee;
 }
+
+.orangeBack{
+  background-color: rgba(208, 69, 3, 53);
+}
+
+.whiteText{
+  color: white;
+}
+
 .saadBanner {
   margin-top: 50px;
   margin-bottom: 30px;
@@ -75,15 +84,45 @@ p.large {
     background-color: #f8f8f8;
     border-color: none !important;
 }
+.portfolio {
+  max-height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#tweet {
+  overflow: hidden;
+}
+#tweet ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 99999px;
+  height: 100px;
+}
+#tweet ul li {
+  width: 300px;
+  min-height: 150px;
+  float: left;
+  border-right: 1px solid #eee;
+  padding: 0 10px 0 0;
+  margin: 0 10px 0 0;
+}
+
+
+
 .marginForNav {
   padding-top: 130px;
 }
 .group1 {
-  background-color: rgba(104, 104, 140, 0.5);
+  background-color: rgba(138, 137, 137, 58);
 }
-.group2, .group3, .group4 {
+.group2, .group3, .group4, .group8, .group11, .group13, .group14 {
   padding-bottom: 30px;
 }
-.group2, .group4, .group5 {
+.group10, .group11 {
+  background-color: rgb(130, 30, 50);
+}
+
+.group2, .group4, .group5, .group10 {
   padding-top: 50px;
 }
