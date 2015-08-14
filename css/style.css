@@ -32,6 +32,15 @@ section {
   background-color: rgba(208, 69, 3, 53);
 }
 
+.darkGreyBack{
+  background-color: rgba(62, 62, 62, 50);
+}
+
+.charcoalBack{
+  background-color: rgba(58, 81, 92, 50);
+}
+
+
 .whiteText{
   color: white;
 }
