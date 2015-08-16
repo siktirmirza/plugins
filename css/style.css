@@ -68,31 +68,26 @@ p.large {
   vertical-align: middle;
   float: none;
 }
-#top {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  background-color: white;
-}
 #top img {
-  width: auto;
   max-height: 80px;
   margin-left: 10px;
   margin-right: auto;
   padding: 10px;
 }
-#top .navbar {
+#top.navbar {
   margin-bottom: 0px !important;
   border-radius: 0px !important;
   background-image: none !important;
   background-repeat: none !important;
   box-shadow: none !important;
 }
-#top .navbar-default {
+#top.navbar-default {
     background-color: #f8f8f8;
     border-color: none !important;
+}
+
+#navbar {
+  clear: both;
 }
 .portfolio {
   max-height: 250px;
@@ -118,7 +113,12 @@ p.large {
   margin: 0 10px 0 0;
 }
 
-
+@media (max-width: 999px) {
+section {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+}
 
 .marginForNav {
   padding-top: 130px;
@@ -135,4 +135,10 @@ p.large {
 
 .group2, .group4, .group5, .group10 {
   padding-top: 50px;
+}
+
+footer img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 }

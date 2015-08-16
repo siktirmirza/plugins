@@ -32,10 +32,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     jQuery(document).ready(function($) {
       $.support.cors = true;
       jQuery('#tweet').twittie({
+        username: null,
+        hideReplies: false,
         apiPath: 'http://anaismoisy.com/apps/saad/api/tweet.php',
         dateFormat: '%d %b %Y',
         template: '<strong class="date">{{date}}</strong> - {{screen_name}}:<br>{{tweet}} — <a href="{{url}}" target=_blank><span class="glyphicon glyphicon-retweet" aria-hidden="true"></a></span>',
-        count: 100
+        count: 999
       }, function() {
         setInterval(function() {
           var item = $('#tweet ul').find('li:first');
@@ -57,7 +59,38 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 <body>
 
-  <div id="top" class="container-fluid">
+  <nav id="top" class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">
+          <img class="img-responsive" src="res/logo.png" >
+        </a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#" onclick="navClicked('#topText')">SAAD</a></li>
+          <li><a href="#" onclick="navClicked('#sidebyside')">Exhibition</a></li>
+          <li><a href="#" onclick="navClicked('#baobab')">Baobab</a></li>
+          <li><a href="#" onclick="navClicked('#mining')">Mining</a></li>
+          <li><a href="#" onclick="navClicked('#statistics')">Statistics</a></li>
+          <li><a href="#" onclick="navClicked('#tweet')">You</a></li>
+          <li><a href="#" onclick="navClicked('#us')">Us</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </nav>
+
+
+  <!-- <div id="top" class="container-fluid">
+
+
+
     <img src="res/logo.png" class="img-responsive">
     <div>
       <nav class="post-article navbar navbar-default">
@@ -89,9 +122,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
       </nav>
 
     </div>
-  </div>
+  </div> -->
   <div class="container-fluid group1">
-    <img src="res/headerPic.png" class="marginForNav col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <img src="res/headerPic.png" class=" col-lg-12 col-md-12 col-sm-12 col-xs-12">
   </div>
   <div id="topText" class="container group2">
     <section class="text-center lead ">
@@ -301,7 +334,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   </div>
   <div id="us" class="container-fluid group13 whiteText charcoalBack">
     <div class="marginTop30 container text-center">
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 marginTop30">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 marginTop30">
         <section>
           <img src="res/Anais.png" alt="Anais" class="img-responsive portfolio">
         </section>
@@ -312,12 +345,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
           Designer
           <br> MA student Design Informatics
           <br>
-          <a href="http://www.anaismoisy.com">www.anaismoisy.com</a>
+          <a href="http://www.anaismoisy.com" class="whiteText">www.anaismoisy.com</a>
           <br>
-          <a href="mailto:anais.moisy@gmail.com">anais.moisy@gmail.com</a>
+          <a href="mailto:anais.moisy@gmail.com" class="whiteText">anais.moisy@gmail.com</a>
         </section>
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 marginTop30">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 marginTop30">
         <section>
           <img src="res/Hadi.png" alt="Hadi" class="img-responsive portfolio">
         </section>
@@ -328,34 +361,35 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
           Developer
           <br> PHD student Design Informatics
           <br>
-          <a href="http://www.hadi.link">www.hadi.link</a>
+          <a href="http://www.hadi.link" class="whiteText">www.hadi.link</a>
           <br>
-          <a href="mailto:H.Mehrpouya@ed.ac.uk">H.Mehrpouya@ed.ac.uk</a>
+          <a href="mailto:H.Mehrpouya@ed.ac.uk" class="whiteText">H.Mehrpouya@ed.ac.uk</a>
         </section>
       </div>
     </div>
   </div>
   <div class="container-fluid group14">
     <div class="marginTop30 container text-center">
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <img src="res/mailLogo.png">
         <br><br>
         <a href="mailto:saad.design.project@gmail.com">saad.design.project@gmail.com</a>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <img src="res/twitterLogo.png">
         <br><br>
         <a href="https://twitter.com/SaadProject">@SaadProject</a>
-        <br><br><br>
-        <img src="res/logo3.png">
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
         <img src="res/UniversityLogo.png">
         <br><br>
         <a href="http://www.designinformatics.org">www.designinformatics.org</a>
       </div>
     </div>
   </div>
+  <footer class="footer text-center" >
+    <img src="res/logo3.png">
+  </footer>
 </body>
 
 </html>
